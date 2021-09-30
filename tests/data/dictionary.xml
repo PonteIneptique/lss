@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns="http://www.loc.gov/standards/alto/ns-v4#"
+      xmlns:page="http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15"
+      xsi:schemaLocation="http://www.loc.gov/standards/alto/ns-v4# https://www.loc.gov/standards/alto/v4/alto.xsd">
+   <Description>
+      <MeasurementUnit>pixel</MeasurementUnit>
+      <OCRProcessing ID="IdOcr">
+         <ocrProcessingStep>
+            <processingDateTime>2021-09-30T08:15:26.663+02:00</processingDateTime>
+            <processingSoftware>
+               <softwareCreator>READ COOP</softwareCreator>
+               <softwareName>Transkribus</softwareName>
+            </processingSoftware>
+         </ocrProcessingStep>
+      </OCRProcessing>
+   </Description>
+   <Layout>
+      <Page ID="Page1" PHYSICAL_IMG_NR="1" HEIGHT="4928" WIDTH="2960">
+         <TopMargin HEIGHT="416" WIDTH="2960" VPOS="0" HPOS="0"/>
+         <LeftMargin HEIGHT="4428" WIDTH="204" VPOS="416" HPOS="0"/>
+         <RightMargin HEIGHT="4428" WIDTH="212" VPOS="416" HPOS="2748"/>
+         <BottomMargin HEIGHT="84" WIDTH="2960" VPOS="4844" HPOS="0"/>
+         <PrintSpace HEIGHT="4428" WIDTH="2544" VPOS="416" HPOS="204">
+            <TextBlock ID="r_1_1" HEIGHT="64" WIDTH="938" VPOS="440" HPOS="1022">
+               <Shape>
+                  <Polygon POINTS="1022,440 1960,440 1960,504 1022,504"/>
+               </Shape>
+               <TextLine ID="tl_1"
+                         BASELINE="1023,499 1117,499 1609,497 1959,499"
+                         HEIGHT="62"
+                         WIDTH="936"
+                         VPOS="441"
+                         HPOS="1023">
+                  <String ID="string_tl_1"
+                          HEIGHT="62"
+                          WIDTH="936"
+                          VPOS="441"
+                          HPOS="1023"
+                          CONTENT="DE SYNONYMIE LATINE."/>
+               </TextLine>
+            </TextBlock>
+            <TextBlock ID="r_2_1" HEIGHT="68" WIDTH="96" VPOS="432" HPOS="2630">
+               <Shape>
+                  <Polygon POINTS="2630,432 2726,432 2726,500 2630,500"/>
+               </Shape>
+               <TextLine ID="tl_2"
+                         BASELINE="2631,499 2725,497"
+                         HEIGHT="66"
+                         WIDTH="94"
+                         VPOS="433"
+                         HPOS="2631">
+                  <String ID="string_tl_2"
+                          HEIGHT="66"
+                          WIDTH="94"
+                          VPOS="433"
+                          HPOS="2631"
+                          CONTENT="83"/>
+               </TextLine>
+            </TextBlock>
+            <TextBlock ID="r_2_2" HEIGHT="934" WIDTH="2512" VPOS="592" HPOS="220">
+               <Shape>
+                  <Polygon POINTS="220,592 2732,592 2732,1526 220,1526"/>
+               </Shape>
+               <TextLine ID="tl_3"
+                         BASELINE="347,669 421,669 1047,671 1451,675 1961,669 2379,665 2487,667 2527,669 2731,649"
+                         HEIGHT="82"
+                         WIDTH="2384"
+                         VPOS="593"
+                         HPOS="347">
+                  <String ID="string_tl_3"
+                          HEIGHT="82"
+                          WIDTH="2384"
+                          VPOS="593"
+                          HPOS="347"
+                          CONTENT="Duplex. Duplum. Geminus. Dupliciter. Bifariam. 1. Du¬"/>
+               </TextLine>
+               <TextLine ID="tl_4"
+                         BASELINE="221,817 379,795 819,791 959,789 1315,791 1477,791 1919,789 2483,789 2723,789"
+                         HEIGHT="104"
+                         WIDTH="2502"
+                         VPOS="713"
+                         HPOS="221">
+                  <String ID="string_tl_4"
+                          HEIGHT="104"
+                          WIDTH="2502"
+                          VPOS="713"
+                          HPOS="221"
+                          CONTENT="plex, double en parlant de quantités déterminées qu’il"/>
+               </TextLine>
+               <TextLine ID="tl_5"
+                         BASELINE="229,915 473,917 619,915 693,915 1327,913 1577,915 1923,913 2049,913 2473,911 2727,895"
+                         HEIGHT="106"
+                         WIDTH="2498"
+                         VPOS="835"
+                         HPOS="229">
+                  <String ID="string_tl_5"
+                          HEIGHT="106"
+                          WIDTH="2498"
+                          VPOS="835"
+                          HPOS="229"
+                          CONTENT="suffît de compter; duplum, en parlant de quantités indé¬"/>
+               </TextLine>
+               <TextLine ID="tl_6"
+                         BASELINE="227,1041 685,1035 907,1037 1101,1037 1353,1037 1493,1039 1667,1037 2053,1033 2725,1037"
+                         HEIGHT="104"
+                         WIDTH="2498"
+                         VPOS="957"
+                         HPOS="227">
+                  <String ID="string_tl_6"
+                          HEIGHT="104"
+                          WIDTH="2498"
+                          VPOS="957"
+                          HPOS="227"
+                          CONTENT="terminées qu’il faut peser ou mesurer, Duplex s’emploie"/>
+               </TextLine>
+               <TextLine ID="tl_7"
+                         BASELINE="235,1159 599,1159 1143,1157 1643,1155 2253,1155 2719,1173"
+                         HEIGHT="104"
+                         WIDTH="2484"
+                         VPOS="1079"
+                         HPOS="235">
+                  <String ID="string_tl_7"
+                          HEIGHT="104"
+                          WIDTH="2484"
+                          VPOS="1079"
+                          HPOS="235"
+                          CONTENT="adjectivement, duplum substantivement. Quintil. VIII,"/>
+               </TextLine>
+               <TextLine ID="tl_8"
+                         BASELINE="237,1283 323,1295 499,1281 627,1279 819,1277 889,1281 1149,1281 1409,1281 1755,1279 1927,1277 2111,1279 2715,1279"
+                         HEIGHT="104"
+                         WIDTH="2478"
+                         VPOS="1199"
+                         HPOS="237">
+                  <String ID="string_tl_8"
+                          HEIGHT="104"
+                          WIDTH="2478"
+                          VPOS="1199"
+                          HPOS="237"
+                          CONTENT="6, 42. In quo et numerus est duplex, nec duplum virium."/>
+               </TextLine>
+               <TextLine ID="tl_9"
+                         BASELINE="243,1401 549,1401 817,1399 1017,1401 1249,1403 1809,1419 2073,1397 2321,1401 2591,1399 2725,1399"
+                         HEIGHT="104"
+                         WIDTH="2482"
+                         VPOS="1321"
+                         HPOS="243">
+                  <String ID="string_tl_9"
+                          HEIGHT="104"
+                          WIDTH="2482"
+                          VPOS="1321"
+                          HPOS="243"
+                          CONTENT="Armée deux fois plus nombreuse, mais sans offrir le"/>
+               </TextLine>
+               <TextLine ID="tl_10"
+                         BASELINE="237,1525 551,1525 681,1523 999,1523"
+                         HEIGHT="80"
+                         WIDTH="762"
+                         VPOS="1445"
+                         HPOS="237">
+                  <String ID="string_tl_10"
+                          HEIGHT="80"
+                          WIDTH="762"
+                          VPOS="1445"
+                          HPOS="237"
+                          CONTENT="double de forces."/>
+               </TextLine>
+            </TextBlock>
+            <TextBlock ID="r_2_3" HEIGHT="984" WIDTH="2484" VPOS="1548" HPOS="238">
+               <Shape>
+                  <Polygon POINTS="238,1548 2722,1548 2722,2532 238,2532"/>
+               </Shape>
+               <TextLine ID="tl_11"
+                         BASELINE="349,1647 425,1647 729,1645 1081,1645 1281,1647 1597,1647 2119,1645 2255,1649 2577,1647 2721,1647"
+                         HEIGHT="122"
+                         WIDTH="2372"
+                         VPOS="1549"
+                         HPOS="349">
+                  <String ID="string_tl_11"
+                          HEIGHT="122"
+                          WIDTH="2372"
+                          VPOS="1549"
+                          HPOS="349"
+                          CONTENT="2. Étant donnés des objets semblables et pareils au"/>
+               </TextLine>
+               <TextLine ID="tl_12"
+                         BASELINE="241,1769 593,1767 731,1767 999,1791 1221,1769 1473,1769 1611,1769 1971,1783 2217,1767 2375,1767 2721,1769"
+                         HEIGHT="102"
+                         WIDTH="2480"
+                         VPOS="1689"
+                         HPOS="241">
+                  <String ID="string_tl_12"
+                          HEIGHT="102"
+                          WIDTH="2480"
+                          VPOS="1689"
+                          HPOS="241"
+                          CONTENT="nombre de deux, c’est l’idée du nombre deux qui domine"/>
+               </TextLine>
+               <TextLine ID="tl_13"
+                         BASELINE="241,1893 297,1893 563,1889 1137,1891 1225,1891 1457,1891 1949,1897 2215,1891 2347,1893 2721,1875"
+                         HEIGHT="102"
+                         WIDTH="2480"
+                         VPOS="1813"
+                         HPOS="241">
+                  <String ID="string_tl_13"
+                          HEIGHT="102"
+                          WIDTH="2480"
+                          VPOS="1813"
+                          HPOS="241"
+                          CONTENT="dans duplex comme dans διπλοῦς; c’est l’idée de ressem¬"/>
+               </TextLine>
+               <TextLine ID="tl_14"
+                         BASELINE="241,2017 537,2013 657,2013 785,2013 1067,2015 1229,2013 1581,2015 1661,2015 2081,2013 2499,2015 2721,2013"
+                         HEIGHT="106"
+                         WIDTH="2480"
+                         VPOS="1935"
+                         HPOS="241">
+                  <String ID="string_tl_14"
+                          HEIGHT="106"
+                          WIDTH="2480"
+                          VPOS="1935"
+                          HPOS="241"
+                          CONTENT="blance et de parité qui domine dans geminus comme dans"/>
+               </TextLine>
+               <TextLine ID="tl_15"
+                         BASELINE="241,2137 281,2137 815,2137 941,2137 1313,2137 1461,2139 1657,2139 1901,2139 1989,2139 2129,2133 2721,2137"
+                         HEIGHT="102"
+                         WIDTH="2480"
+                         VPOS="2061"
+                         HPOS="241">
+                  <String ID="string_tl_15"
+                          HEIGHT="102"
+                          WIDTH="2480"
+                          VPOS="2061"
+                          HPOS="241"
+                          CONTENT="δίδυμος. Dans ce passage de Cic. Part. 6. Verba geminata"/>
+               </TextLine>
+               <TextLine ID="tl_16"
+                         BASELINE="239,2263 285,2263 563,2259 873,2259 1229,2259 1581,2261 1641,2261 2143,2259 2445,2261 2719,2241"
+                         HEIGHT="108"
+                         WIDTH="2480"
+                         VPOS="2177"
+                         HPOS="239">
+                  <String ID="string_tl_16"
+                          HEIGHT="108"
+                          WIDTH="2480"
+                          VPOS="2177"
+                          HPOS="239"
+                          CONTENT="et duplicata, vel etiam saepius iterata, geminata se rap¬"/>
+               </TextLine>
+               <TextLine ID="tl_17"
+                         BASELINE="241,2407 481,2381 575,2379 699,2381 1161,2383 1433,2383 1663,2385 1841,2383 1947,2385 2265,2381 2393,2383 2717,2381"
+                         HEIGHT="104"
+                         WIDTH="2476"
+                         VPOS="2303"
+                         HPOS="241">
+                  <String ID="string_tl_17"
+                          HEIGHT="104"
+                          WIDTH="2476"
+                          VPOS="2303"
+                          HPOS="241"
+                          CONTENT="porte à la répétition d’une idée par le moyen de termes"/>
+               </TextLine>
+               <TextLine ID="tl_18"
+                         BASELINE="243,2507 281,2507 843,2505 1257,2507 1367,2507 1817,2507 2035,2507 2329,2507 2559,2507"
+                         HEIGHT="104"
+                         WIDTH="2316"
+                         VPOS="2427"
+                         HPOS="243">
+                  <String ID="string_tl_18"
+                          HEIGHT="104"
+                          WIDTH="2316"
+                          VPOS="2427"
+                          HPOS="243"
+                          CONTENT="synonymes, duplicata à la répétition d’un même mot."/>
+               </TextLine>
+            </TextBlock>
+            <TextBlock ID="r_2_4" HEIGHT="966" WIDTH="2484" VPOS="2548" HPOS="234">
+               <Shape>
+                  <Polygon POINTS="234,2548 2718,2548 2718,3514 234,3514"/>
+               </Shape>
+               <TextLine ID="tl_19"
+                         BASELINE="349,2627 403,2627 823,2627 1057,2629 1439,2631 1793,2631 1921,2631 2297,2629 2353,2631 2485,2629 2717,2629"
+                         HEIGHT="104"
+                         WIDTH="2368"
+                         VPOS="2549"
+                         HPOS="349">
+                  <String ID="string_tl_19"
+                          HEIGHT="104"
+                          WIDTH="2368"
+                          VPOS="2549"
+                          HPOS="349"
+                          CONTENT="3. Dupliciter est toujours adverbe de manière : de deux"/>
+               </TextLine>
+               <TextLine ID="tl_20"
+                         BASELINE="239,2753 673,2769 759,2751 891,2751 1213,2753 1463,2755 1593,2755 1657,2753 2089,2751 2351,2753 2711,2753"
+                         HEIGHT="106"
+                         WIDTH="2472"
+                         VPOS="2673"
+                         HPOS="239">
+                  <String ID="string_tl_20"
+                          HEIGHT="106"
+                          WIDTH="2472"
+                          VPOS="2673"
+                          HPOS="239"
+                          CONTENT="manières, à un double point de vue; bifariam est adverbe"/>
+               </TextLine>
+               <TextLine ID="tl_21"
+                         BASELINE="241,2873 349,2873 539,2873 585,2873 709,2871 937,2873 1315,2875 1435,2875 1561,2875 1785,2875 2131,2875 2305,2877 2549,2877 2703,2893"
+                         HEIGHT="104"
+                         WIDTH="2462"
+                         VPOS="2795"
+                         HPOS="241">
+                  <String ID="string_tl_21"
+                          HEIGHT="104"
+                          WIDTH="2462"
+                          VPOS="2795"
+                          HPOS="241"
+                          CONTENT="de lieu : en deux endroits ou en deux parties. Cic. Fam. IX,"/>
+               </TextLine>
+               <TextLine ID="tl_22"
+                         BASELINE="237,2997 287,2997 497,2995 1327,2997 1539,2997 1853,2997 1943,2999 2255,2999 2535,3001 2709,2999"
+                         HEIGHT="102"
+                         WIDTH="2472"
+                         VPOS="2919"
+                         HPOS="237">
+                  <String ID="string_tl_22"
+                          HEIGHT="102"
+                          WIDTH="2472"
+                          VPOS="2919"
+                          HPOS="237"
+                          CONTENT="20. Dupliciter delectatus sum litteris tuis. Ta lettre me"/>
+               </TextLine>
+               <TextLine ID="tl_23"
+                         BASELINE="239,3121 567,3119 705,3119 945,3117 1403,3121 1887,3119 2367,3125 2539,3139 2699,3123"
+                         HEIGHT="100"
+                         WIDTH="2460"
+                         VPOS="3043"
+                         HPOS="239">
+                  <String ID="string_tl_23"
+                          HEIGHT="100"
+                          WIDTH="2460"
+                          VPOS="3043"
+                          HPOS="239"
+                          CONTENT="charme de deux manières. Comparez avec Tusc. III, 11."/>
+               </TextLine>
+               <TextLine ID="tl_24"
+                         BASELINE="235,3241 527,3239 767,3265 1745,3241 2211,3245 2705,3241"
+                         HEIGHT="104"
+                         WIDTH="2470"
+                         VPOS="3163"
+                         HPOS="235">
+                  <String ID="string_tl_24"
+                          HEIGHT="104"
+                          WIDTH="2470"
+                          VPOS="3163"
+                          HPOS="235"
+                          CONTENT="Bifariam quatuor perturbationes aequaliter distributae"/>
+               </TextLine>
+               <TextLine ID="tl_25"
+                         BASELINE="241,3367 281,3367 671,3361 1003,3365 1409,3365 2067,3367 2261,3367 2415,3367 2707,3345"
+                         HEIGHT="114"
+                         WIDTH="2466"
+                         VPOS="3285"
+                         HPOS="241">
+                  <String ID="string_tl_25"
+                          HEIGHT="114"
+                          WIDTH="2466"
+                          VPOS="3285"
+                          HPOS="241"
+                          CONTENT="sunt. Les quatre passions fondamentales ont été égale¬"/>
+               </TextLine>
+               <TextLine ID="tl_26"
+                         BASELINE="241,3487 469,3487 881,3487 1015,3485 1247,3487 1729,3485"
+                         HEIGHT="104"
+                         WIDTH="1488"
+                         VPOS="3409"
+                         HPOS="241">
+                  <String ID="string_tl_26"
+                          HEIGHT="104"
+                          WIDTH="1488"
+                          VPOS="3409"
+                          HPOS="241"
+                          CONTENT="ment réparties en deux catégories."/>
+               </TextLine>
+            </TextBlock>
+            <TextBlock ID="r_3_1" HEIGHT="112" WIDTH="86" VPOS="3736" HPOS="1436">
+               <Shape>
+                  <Polygon POINTS="1436,3736 1522,3736 1522,3848 1436,3848"/>
+               </Shape>
+               <TextLine ID="tl_27"
+                         BASELINE="1437,3847 1521,3847"
+                         HEIGHT="110"
+                         WIDTH="84"
+                         VPOS="3737"
+                         HPOS="1437">
+                  <String ID="string_tl_27"
+                          HEIGHT="110"
+                          WIDTH="84"
+                          VPOS="3737"
+                          HPOS="1437"
+                          CONTENT="E"/>
+               </TextLine>
+            </TextBlock>
+            <TextBlock ID="r_3_2" HEIGHT="596" WIDTH="2478" VPOS="4014" HPOS="236">
+               <Shape>
+                  <Polygon POINTS="236,4014 2714,4014 2714,4610 236,4610"/>
+               </Shape>
+               <TextLine ID="tl_28"
+                         BASELINE="347,4091 649,4095 1215,4095 1805,4097 2241,4095 2701,4097"
+                         HEIGHT="82"
+                         WIDTH="2354"
+                         VPOS="4015"
+                         HPOS="347">
+                  <String ID="string_tl_28"
+                          HEIGHT="82"
+                          WIDTH="2354"
+                          VPOS="4015"
+                          HPOS="347"
+                          CONTENT="Ebrius. Vinolentus. Temulentus. Crapula. Ebriosus."/>
+               </TextLine>
+               <TextLine ID="tl_29"
+                         BASELINE="245,4217 281,4217 657,4215 1133,4219 1329,4215 1557,4219 1801,4219 2013,4219 2181,4217 2471,4217 2713,4217"
+                         HEIGHT="102"
+                         WIDTH="2468"
+                         VPOS="4137"
+                         HPOS="245">
+                  <String ID="string_tl_29"
+                          HEIGHT="102"
+                          WIDTH="2468"
+                          VPOS="4137"
+                          HPOS="245"
+                          CONTENT="1. Ebrietas présente par leur beau côté les suites d’un"/>
+               </TextLine>
+               <TextLine ID="tl_30"
+                         BASELINE="241,4337 469,4339 599,4339 791,4357 1029,4341 1565,4359 2117,4359 2287,4339 2703,4337"
+                         HEIGHT="104"
+                         WIDTH="2462"
+                         VPOS="4259"
+                         HPOS="241">
+                  <String ID="string_tl_30"
+                          HEIGHT="104"
+                          WIDTH="2462"
+                          VPOS="4259"
+                          HPOS="241"
+                          CONTENT="excès de vin, c’est l’exaltation, l’animation, qui touchent"/>
+               </TextLine>
+               <TextLine ID="tl_31"
+                         BASELINE="239,4463 281,4463 629,4461 965,4489 1495,4461 1699,4463 1807,4463 2105,4461 2565,4457 2699,4457"
+                         HEIGHT="106"
+                         WIDTH="2460"
+                         VPOS="4383"
+                         HPOS="239">
+                  <String ID="string_tl_31"
+                          HEIGHT="106"
+                          WIDTH="2460"
+                          VPOS="4383"
+                          HPOS="239"
+                          CONTENT="à l’inspiration, μέθη; vinolentia et le terme archaïque de"/>
+               </TextLine>
+               <TextLine ID="tl_32"
+                         BASELINE="237,4587 587,4585 839,4583 1063,4587 1505,4585 1699,4585 1919,4585 2195,4585 2453,4599 2697,4577"
+                         HEIGHT="108"
+                         WIDTH="2460"
+                         VPOS="4501"
+                         HPOS="237">
+                  <String ID="string_tl_32"
+                          HEIGHT="108"
+                          WIDTH="2460"
+                          VPOS="4501"
+                          HPOS="237"
+                          CONTENT="temulentia les font envisager par leur vilain côté, celui"/>
+               </TextLine>
+            </TextBlock>
+            <TextBlock ID="r_4_1" HEIGHT="124" WIDTH="594" VPOS="4704" HPOS="1136">
+               <Shape>
+                  <Polygon POINTS="1136,4704 1730,4704 1730,4828 1136,4828"/>
+               </Shape>
+               <TextLine ID="tl_33"
+                         BASELINE="1137,4791 1309,4793 1347,4791 1729,4791"
+                         HEIGHT="122"
+                         WIDTH="592"
+                         VPOS="4705"
+                         HPOS="1137">
+                  <String ID="string_tl_33"
+                          HEIGHT="122"
+                          WIDTH="592"
+                          VPOS="4705"
+                          HPOS="1137"
+                          CONTENT="Digitlzed by Google"/>
+               </TextLine>
+            </TextBlock>
+         </PrintSpace>
+      </Page>
+   </Layout>
+</alto>
