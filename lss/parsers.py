@@ -1,9 +1,26 @@
 from abc import ABCMeta, abstractmethod
-from typing import Iterable, List, Optional
+from typing import Iterable, List, Optional, Tuple
 import logging
+import os
+from itertools import cycle
+
+import lxml.etree as ET
+from PIL import Image, ImageDraw
 
 from lss.utils import Points, simplify_line, simplify_mask
-import lxml.etree as ET
+
+
+cmap = cycle([(230, 25, 75, 127),
+              (60, 180, 75, 127),
+              (255, 225, 25, 127),
+              (0, 130, 200, 127),
+              (245, 130, 48, 127),
+              (145, 30, 180, 127),
+              (70, 240, 240, 127)])
+
+
+def _get_circle(points: Points, width: int = 5) -> Tuple[int, int, int, int]:
+    return (points[0]-width, points[1]-width, points[0]+width, points[1]+width)
 
 
 logger = logging.getLogger()
@@ -29,6 +46,13 @@ class Parsed(metaclass=ABCMeta):
         self._filepath = filepath
         self.xml: ET.ElementTree = ET.parse(filepath)
 
+    def reload(self) -> None:
+        self.xml: ET.ElementTree = ET.parse(self._filepath)
+
+    @abstractmethod
+    def find_namespace(self):
+        pass
+
     @abstractmethod
     def _lines_get(self) -> Iterable[ET.Element]:
         pass
@@ -45,7 +69,7 @@ class Parsed(metaclass=ABCMeta):
     def _line_write(self, line: ET.Element, points: List[Points]) -> None:
         pass
 
-    def simplify_lines(self, epsilon_ratio: float = .10, **kwargs):
+    def simplify_lines(self, ratio: float = .10, **kwargs):
         """ Take care of all lines
 
         :param epsilon_ratio: Ratio of the line mask height we keep as maximum epsilon, .25 is a bit aggressive, .10
@@ -55,7 +79,7 @@ class Parsed(metaclass=ABCMeta):
         for line_no, line in enumerate(self._lines_get()):
             orig_points: List[Points] = self._line_parse(line)
             if "epsilon" not in kwargs:
-                kwargs["epsilon"]: float = epsilon_ratio * self._line_height(line)
+                kwargs["epsilon"]: float = ratio * self._line_height(line)
             points: List[Points] = simplify_line(orig_points, **kwargs)
 
             logger.info(f"Line {line_no}: Reduced number of points by {len(orig_points)-len(points)}")
@@ -106,6 +130,50 @@ class Parsed(metaclass=ABCMeta):
         bot, top = min(y), max(y)
         return top-bot
 
+    def draw(self, image_path: str = None, output_path: str = None, width: int = 4):
+        im = Image.open(image_path)
+        im = im.convert('RGBA')
+        tmp = Image.new('RGBA', im.size, (0, 0, 0, 0))
+        draw = ImageDraw.Draw(tmp)
+        for line in self._lines_get():
+            points = self._line_parse(line)
+            draw.line(points, width=width, fill="red")
+            for circle in [_get_circle(cross, width=width) for cross in points]:
+                draw.ellipse(circle, fill="white")
+
+        tmp2 = Image.new('RGBA', im.size, (0, 0, 0, 0))
+        draw = ImageDraw.Draw(tmp2)
+        for mask in self._masks_get():
+            points = self._mask_parse(mask)
+            draw.polygon(points, fill=next(cmap))
+            for circle in [_get_circle(cross, width=width) for cross in points]:
+                draw.ellipse(circle, fill="white")
+
+        tmp = Image.alpha_composite(tmp2, tmp)
+        im = Image.alpha_composite(im, tmp)
+        im = im.convert('RGB')
+        if not output_path:
+            output_path = '{}.segmented.jpg'.format(os.path.basename(image_path))
+        im.save(output_path, quality=60)
+
+    def test_values(self, test_values: List[Tuple[float, float]], image_path: str = None):
+        """ Check different values of simplification on an image
+
+        :param test_values: Tuple of ratio (<1.0) where the first ratio is applied to line, the second to mask
+        eg.
+        >>> page = PageXML("somexml.xml")
+        >>> page.test_values([(.1, .1), (.15, .15), (.20, .20)], image_path)
+        """
+        basename = os.path.basename(image_path)
+        self.draw(image_path=image_path, output_path=f"./{basename}.original.jpg")
+
+        for idx, (line_ratio, mask_ratio) in enumerate(test_values):
+            if idx != 0:
+                self.reload()
+            self.simplify_lines(ratio=line_ratio)
+            self.simplify_masks(ratio=mask_ratio)
+            self.draw(image_path=image_path, output_path=f"./{basename}.line{line_ratio}-mask{mask_ratio}.jpg")
+
 
 class Alto(Parsed):
     """
@@ -131,6 +199,11 @@ class Alto(Parsed):
     def _line_write(self, line: ET.Element, points: List[Points]) -> None:
         line.attrib["BASELINE"] = _points_list_to_string(points)
 
+    def find_namespace(self):
+        for value in self.xml.getroot().nsmap.values():
+            if "alto" in value:
+                self.ns = {"alto": value}
+
 
 class PageXML(Parsed):
     """
@@ -143,6 +216,11 @@ class PageXML(Parsed):
     def __init__(self, filepath: str, namespace: Optional[str] = None):
         super(PageXML, self).__init__(filepath)
         self.ns = {"page": namespace or "http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15"}
+
+    def find_namespace(self):
+        for value in self.xml.getroot().nsmap.values():
+            if "/PAGE/gts/"in value:
+                self.ns = {"page": value}
 
     def _lines_get(self) -> Iterable[ET.Element]:
         yield from self.xml.xpath(".//page:TextLine", namespaces=self.ns)
