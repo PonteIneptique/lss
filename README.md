@@ -8,6 +8,8 @@ LSS (Layout Segmentation Simplifier)
 
 ## Use
 
+### Generic use
+
 ```python
 from lss.parsers import PageXML
 
@@ -28,7 +30,9 @@ file.write(suffix="simple")
 file.xml
 ```
 
-You can also get it to make multiple simulation, to chose the best value:
+### Qualitatively search for best parameters
+
+You can also get it to make multiple simulation, to chose the best value (highest ratio = bigger simplification)
 
 ```python
 from lss.parsers import PageXML
@@ -44,5 +48,9 @@ Few files will be saved. Each test will create test files with overlays (cf. fol
 Original            |  15% ratio on both line and masks
 :-------------------------:|:-------------------------:
 ![Original Mask](./data/0002_Main_frame.jpg.original.jpg)  |  ![Original Mask](./data/0002_Main_frame.jpg.line0.15-mask0.15.jpg)
+
+10%            |  20%
+:-------------------------:|:-------------------------:
+![Original Mask](./data/0002_Main_frame.jpg.line0.1-mask0.1.jpg)  |  ![Original Mask](./data/0002_Main_frame.jpg.line0.2-mask0.2.jpg)
 
 
