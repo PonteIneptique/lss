@@ -37,9 +37,13 @@ You can also get it to make multiple simulation, to chose the best value (highes
 ```python
 from lss.parsers import PageXML
 
-page = PageXML("./data/0002_Main_frame.xml")
-page.find_namespace()
-page.test_values([(.05, .05), (.1, .1), (.15, .15), (.20, .20)], image_path="./data/0002_Main_frame.jpg")
+page = PageXML.from_file("./data/0002_Main_frame.xml")
+page.find_namespace() # Useful in case you use PageXML as it scans for the right namespace
+page.test_values(
+    [(.05, .05), (.1, .1), (.15, .15), (.20, .20)],
+    image="./data/0002_Main_frame.jpg",
+    basename_output="./data/0002_Main_frame"
+)
 ```
 
 In this context, lines will be simplified by a ratio of 0.05, 0.10, 0.15 and 0.20. Mask will be as well. 
