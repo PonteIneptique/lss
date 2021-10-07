@@ -14,7 +14,7 @@ from setuptools import find_packages, setup, Command
 here = os.path.abspath(os.path.dirname(__file__))
 
 # Package meta-data.
-NAME = 'lss'
+NAME = 'layouts-semgnetation-simplifier'
 DESCRIPTION = 'Layout Segmentation Simplifier'
 URL = 'https://github.com/ponteineptique/lss'
 AUTHOR = 'Thibault Clérice'
