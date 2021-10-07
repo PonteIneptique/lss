@@ -332,7 +332,7 @@ class PageXML(Parsed):
     >>> file.simplify_lines()
     Modifications(original=[5], simplified=[3])
     >>> new_xml = file.dump(filepath="./unittest.doctest.xml")
-    >>> os.path.exists("./page.simplified.xml")
+    >>> os.path.exists("./unittest.doctest.xml")
     True
     >>> open("./unittest.doctest.xml").read() == new_xml
     True
