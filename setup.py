@@ -14,7 +14,7 @@ from setuptools import find_packages, setup, Command
 here = os.path.abspath(os.path.dirname(__file__))
 
 # Package meta-data.
-NAME = 'layouts-semgnetation-simplifier'
+NAME = 'layouts-segmentation-simplifier'
 DESCRIPTION = 'Layout Segmentation Simplifier'
 URL = 'https://github.com/ponteineptique/lss'
 AUTHOR = 'Thibault Clérice'
@@ -103,11 +103,9 @@ setup(
     python_requires=REQUIRES_PYTHON,
     url=URL,
     # If your package is a single module, use this instead of 'packages':
-    packages=['htruc'],
-	package_data={'htruc': ['tests/*.json']},
-	include_package_data=True,
+    packages=find_packages(exclude=('tests', 'env', 'venv',)),
     entry_points={
-        'console_scripts': ['htruc=htruc.cli:cli'],
+        'console_scripts': ['lss=lss.cli:main'],
     },
     install_requires=REQUIRED,
     extras_require=EXTRAS,
