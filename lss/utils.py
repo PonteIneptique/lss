@@ -24,13 +24,13 @@ def simplify_line(
     """ Given a list of points, returns a simplified line
 
     >>> simplify_line([[0.0, 0.0], [5.0, 4.0], [11.0, 5.5], [17.3, 3.2], [27.8, 0.1]])
-    [[0.0, 0.0], [5.0, 4.0], [11.0, 5.5], [27.8, 0.1]
+    [[0.0, 0.0], [5.0, 4.0], [11.0, 5.5], [27.8, 0.1]]
 
     >>> simplify_line(
     ...     [[0.0, 0.0], [5.0, 4.0], [11.0, 5.5], [17.3, 3.2], [27.8, 0.1]],
     ...     algo=LineSimplificator.VisvalingamWhyatt
     ... )
-    [[5.0, 2.0], [7.0, 25.0], [10.0, 10.0]]
+    [[0.0, 0.0], [11.0, 5.5], [27.8, 0.1]]
     """
     if algo == LineSimplificator.DouglasPeucker:
         return _dp(points, epsilon or 1.0)
