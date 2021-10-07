@@ -1,9 +1,10 @@
 import logging
 import io
+import os
 import enum
 
 from abc import ABCMeta, abstractmethod
-from typing import Iterable, List, Optional, Tuple, Union, Generator
+from typing import Iterable, List, Optional, Tuple, Union, Callable
 from itertools import cycle
 from dataclasses import dataclass
 
@@ -141,6 +142,10 @@ class Parsed(metaclass=ABCMeta):
         return Modifications(original=original, simplified=simplified)
 
     @abstractmethod
+    def get_image_path(self) -> str:
+        pass
+
+    @abstractmethod
     def _masks_get(self) -> Iterable[ET.Element]:
         pass
 
@@ -250,7 +255,8 @@ class Parsed(metaclass=ABCMeta):
             test_values: List[Tuple[float, float]],
             image: Union[Image.Image, str],
             basename_output: Optional[str] = None,
-            draw_original: bool = True
+            draw_original: bool = True,
+            callback: Callable[[], None] = None
     ) -> List[Tuple[Image.Image, Modifications, Modifications]]:
         """ Check different values of simplification on an image
 
@@ -258,6 +264,7 @@ class Parsed(metaclass=ABCMeta):
         :param image: Image to draw over
         :param basename_output: Optional path were to save the output (basename), e.g. ./myimage (no extension)
         :param draw_original: If set to false, does not draw the original mask
+        :param callback: Callback, just to say that one output is ready
         eg.
 
         Usage:
@@ -281,6 +288,8 @@ class Parsed(metaclass=ABCMeta):
                 Modifications([], []),
                 Modifications([], [])
             ))
+            if callback is not None:
+                callback()
 
         for idx, (line_ratio, mask_ratio) in enumerate(test_values):
             if idx != 0:
@@ -295,6 +304,8 @@ class Parsed(metaclass=ABCMeta):
             )
 
             data.append((image, line_logs, mask_logs))
+            if callback is not None:
+                callback()
         return data
 
 
@@ -341,9 +352,27 @@ class PageXML(Parsed):
         super(PageXML, self).__init__(content, namespace=namespace, **kwargs)
         self.ns = {"page": namespace or "http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15"}
 
+    def get_image_path(self, basedir: Optional[str] = None) -> str:
+        """ Retrieve the image path from the XML
+
+        >>> file = PageXML.from_file("./tests/data/simple.page.xml")
+        >>> file.get_image_path()
+        'simple.png'
+        >>> import os.path
+        >>> file.get_image_path(basedir=os.path.dirname("./tests/data/simple.page.xml"))
+        './tests/data/simple.png'
+        """
+        image = self.xml.xpath("//page:Page/@imageFilename", namespaces=self.ns)
+        if image:
+            image = str(image[0])
+            if basedir:
+                return os.path.join(basedir, image)
+            return image
+        raise ValueError("No image path found")
+
     def find_namespace(self):
         for value in self.xml.getroot().nsmap.values():
-            if "/PAGE/gts/"in value:
+            if "/PAGE/gts/" in value:
                 self.ns = {"page": value}
 
     def _lines_get(self) -> Iterable[ET.Element]:

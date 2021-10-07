@@ -36,7 +36,7 @@ class TestPage(TestCase):
             page.dump(),
             """<?xml version='1.0' encoding='utf-8'?>
 <PcGts xmlns="http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15">
-    <Page imageWidth="200" imageHeight="200">
+    <Page imageFilename="simple.png" imageWidth="200" imageHeight="200">
         <TextRegion>
             <Coords points="5,5 5,195 195,195 195,5"/>
             <TextLine>
