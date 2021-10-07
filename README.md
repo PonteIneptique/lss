@@ -6,6 +6,9 @@ LSS (Layout Segmentation Simplifier)
 
 `pip install https://github.com/PonteIneptique/lss/archive/refs/heads/main.zip`
 
+or 
+
+`pip install layouts-segmentation-simplifier`
 ## Use
 
 ### Generic use
