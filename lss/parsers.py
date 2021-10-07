@@ -79,7 +79,7 @@ class Parsed(metaclass=ABCMeta):
 
     def __init__(self, content: str, namespace: Optional[str] = None, mode: Mode = Mode.Filepath):
         self._filepath: Optional[str] = content if mode is Mode.Filepath else None
-        self._content: Optional[io.StringIO] = io.StringIO(content) if mode is Mode.String else None
+        self._content: Optional[io.StringIO] = io.BytesIO(content.encode()) if mode is Mode.String else None
 
         self.mode = mode
         self.xml: ET.ElementTree = None
@@ -190,14 +190,13 @@ class Parsed(metaclass=ABCMeta):
         """ Get the written output of the current XML.
         Optionaly outputs its to a file if a file path is given.
 
-
         """
-        string = ET.tounicode(self.xml)
+        string = ET.tostring(self.xml, encoding="utf-8", xml_declaration=True)
 
         if filepath:
-            with open(filepath, "w") as f:
+            with open(filepath, "wb") as f:
                 f.write(string)
-        return string
+        return string.decode()
 
     @staticmethod
     def _compute_height(mask: List[Points]) -> float:
@@ -251,25 +250,37 @@ class Parsed(metaclass=ABCMeta):
             test_values: List[Tuple[float, float]],
             image: Union[Image.Image, str],
             basename_output: Optional[str] = None,
-            draw_first: bool = True
-    ) -> Generator[Tuple[Image.Image, Modifications, Modifications], None, None]:
+            draw_original: bool = True
+    ) -> List[Tuple[Image.Image, Modifications, Modifications]]:
         """ Check different values of simplification on an image
 
         :param test_values: Tuple of ratio (<1.0) where the first ratio is applied to line, the second to mask
         :param image: Image to draw over
         :param basename_output: Optional path were to save the output (basename), e.g. ./myimage (no extension)
-        :param draw_first: If set to false, does not draw the original mask
+        :param draw_original: If set to false, does not draw the original mask
         eg.
-        >>> page = PageXML.from_file("data/0002_Main_frame.xml")
-        >>> page.test_values([(.1, .1), (.15, .15), (.20, .20)],
-        ...    image="data/0002_Main_frame.jpg", basename_output="data/0002_Main_frame")
+
+        Usage:
+
+        >>> page = PageXML.from_file("tests/data/simple.page.xml")
+        >>> four_images = page.test_values([(.1, .1), (.15, .15), (.20, .20)],
+        ...    image="tests/data/simple.png", basename_output="tests", draw_original=True)
+
+        Will create 4 images:
+        - tests.jpg which is the original image with the mask
+        - test.line0.1-mask0.1.jpg which results from a simplification of 10%/10% (line/mask)
+        - test.line0.15-mask0.15.jpg which results from a simplification of 15%/15% (line/mask)
+        - test.line0.2-mask0.2.jpg which results from a simplification of 20%/20% (line/mask)
+
+        It also outputs the image objects and the logs of modifications (See the Modification object)
         """
-        if draw_first:
-            yield (
+        data = []
+        if draw_original:
+            data.append((
                 self.draw(image=image, output=basename_output+".jpg" if basename_output else None),
                 Modifications([], []),
                 Modifications([], [])
-            )
+            ))
 
         for idx, (line_ratio, mask_ratio) in enumerate(test_values):
             if idx != 0:
@@ -282,17 +293,14 @@ class Parsed(metaclass=ABCMeta):
                 image=image,
                 output=f"./{basename_output}.line{line_ratio}-mask{mask_ratio}.jpg" if basename_output else None
             )
-            yield image, line_logs, mask_logs
-        return
+
+            data.append((image, line_logs, mask_logs))
+        return data
 
 
 class Alto(Parsed):
-    """
+    """ Implementation that deals with ALTO files
 
-    >>> from lss.utils import LineSimplificator
-    >>> file = Alto("./tests/data/dictionary.xml")
-    >>> file.simplify_lines()
-    >>> file.dump(filepath="./dictionary.simplified.xml")
     """
     def __init__(self, content: str, namespace: Optional[str] = None, **kwargs):
         super(Alto, self).__init__(content, namespace=namespace, **kwargs)
@@ -317,11 +325,16 @@ class Alto(Parsed):
 
 
 class PageXML(Parsed):
-    """
+    """ Deals with PageXML based content
 
-    >>> file = PageXML("./tests/data/page.xml")
+    >>> import os
+    >>> file = PageXML.from_file("./tests/data/simple.page.xml")
     >>> file.simplify_lines()
-    >>> isinstance(file.dump(filepath="./page.simplified.xml"), str)
+    Modifications(original=[5], simplified=[3])
+    >>> new_xml = file.dump(filepath="./unittest.doctest.xml")
+    >>> os.path.exists("./page.simplified.xml")
+    True
+    >>> open("./unittest.doctest.xml").read() == new_xml
     True
     """
     def __init__(self, content: str, namespace: Optional[str] = None, **kwargs):

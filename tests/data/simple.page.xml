@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PcGts xmlns="http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15">
     <Page imageWidth="200" imageHeight="200">
         <TextRegion>
             <Coords points="5,5 5,195 195,195 195,5"/>
             <TextLine>
-                <Coords points="5,10 5,10 100,10 100,20 100,30 50,10"/>
+                <Coords points="5,10 100,10 100,20 100,30 100,40 100,50 40,50 50,10 5,10"/>
                 <Baseline points="5,10 10,10 15,10 20,20 25,30"/>
             </TextLine>
         </TextRegion>

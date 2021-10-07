@@ -13,9 +13,9 @@ LSS (Layout Segmentation Simplifier)
 ```python
 from lss.parsers import PageXML
 
-file = PageXML(
+file = PageXML.from_file(
     # Path to your file
-    "data/0029_Main_frame.xml",
+    "data/0002_Main_frame.xml",
     # Optional: set-up the namespace, as they tend to change a lot
     namespace="http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15" 
 )
@@ -23,11 +23,9 @@ file = PageXML(
 file.simplify_lines(ratio=.10)
 # Simplify your baseline: things within 15% of your mask height will be discarded (Seems to be a good number)
 file.simplify_masks(ratio=.15)
-# Write the new file
-file.write(suffix="simple")
-# A new file named 00029_Main_frame.simple.xml is born
-# You can also retrieve the modified xml in
-file.xml
+# You can retrieve the xml in file.xml or dump the modified xml in file.xml
+file.dump(filepath="file.xml")
+
 ```
 
 ### Qualitatively search for best parameters
