@@ -2,6 +2,8 @@
 *simplified.xml
 .idea
 /*.xml
+test*.jpg
+data/*.jpg
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

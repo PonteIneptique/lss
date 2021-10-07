@@ -103,11 +103,9 @@ setup(
     python_requires=REQUIRES_PYTHON,
     url=URL,
     # If your package is a single module, use this instead of 'packages':
-    packages=['htruc'],
-	package_data={'htruc': ['tests/*.json']},
-	include_package_data=True,
+    packages=['lss'],
     entry_points={
-        'console_scripts': ['htruc=htruc.cli:cli'],
+        'console_scripts': ['lss=lss.cli:main'],
     },
     install_requires=REQUIRED,
     extras_require=EXTRAS,
