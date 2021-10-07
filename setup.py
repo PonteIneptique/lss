@@ -104,9 +104,9 @@ setup(
     url=URL,
     # If your package is a single module, use this instead of 'packages':
     packages=['lss'],
-    #entry_points={
-    #    'console_scripts': ['htruc=htruc.cli:cli'],
-    #},
+    entry_points={
+        'console_scripts': ['lss=lss.cli:main'],
+    },
     install_requires=REQUIRED,
     extras_require=EXTRAS,
     license='MIT',
