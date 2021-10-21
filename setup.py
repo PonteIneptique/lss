@@ -19,7 +19,7 @@ DESCRIPTION = 'Layout Segmentation Simplifier'
 URL = 'https://github.com/ponteineptique/lss'
 AUTHOR = 'Thibault Clérice'
 REQUIRES_PYTHON = '>=3.7.0'
-VERSION = "0.0.1"
+VERSION = "0.0.2"
 
 # What packages are required for this module to be executed?
 
